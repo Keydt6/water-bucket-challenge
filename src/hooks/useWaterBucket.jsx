@@ -50,12 +50,25 @@ export default function useWaterBucket() {
       if (stateBucketA === 0) {
         index++
         stateBucketA = bucketACapacity
+
         steps.push({
           id: crypto.randomUUID(),
           a: stateBucketA,
           b: stateBucketB,
           action: `Fill bucket ${strBucketA}`
         })
+
+        return calculate(
+          bucketACapacity,
+          bucketBCapacity,
+          z,
+          stateBucketA,
+          stateBucketB,
+          strBucketA,
+          strBucketB,
+          index,
+          steps
+        )
       }
 
       // Bucket B Vacio
@@ -101,6 +114,7 @@ export default function useWaterBucket() {
           b: stateBucketB,
           action: `Empty bucket ${strBucketB}`
         })
+
         return calculate(
           bucketACapacity,
           bucketBCapacity,
@@ -185,7 +199,7 @@ export default function useWaterBucket() {
         error: `Target Z: ${z} must be greater than 0.`
       }
 
-    if (x > z && y > z)
+    if (x < z && y < z)
       return {
         hasSolution: false,
         error: `Target Z: ${z}, outside of X: ${x} and Y: ${y} capabilities.`
