@@ -37,6 +37,64 @@ The water bucket problem, with only two buckets available, is a logical mathemat
 
 In summary, if the capacities of the buckets are not relatively prime (their GCD is not 1 or 2) or the target does not meet the mentioned conditions, then the problem has no solution, and the desired amount of water cannot be measured using the two dice cubes. Therefore, before addressing the problem, it is important to check these conditions to determine if a solution can be found.
 
+#### Project folder structure
+
+    .
+    ├── dist                   # Compiled files
+    ├── docs                   # Documentation files
+    ├── node_modules           # Compiled files
+    ├── public                 # public resources and files
+    ├── src                    # Source files
+    ├── tests                  # Automated tests
+    ├── .eslintrc.cjs          # Eslint configuration file
+    ├── .gitignore
+    ├── index.html
+    ├── package.json
+    ├── README.md
+    ├── vite.config.js         # Vite configuration file
+    └── ...
+
+#### Source files
+
+Automated tests are usually placed into the `test` or, less commonly, into the `spec` or `tests` folder.
+
+    .
+    ├── ...
+    ├── src                    # Source files
+    │   ├── assets             # Resources
+    │   ├── components         # Reusable components
+    │   ├── helpers            # Reusable util functions
+    │   ├── hooks              # Custom hooks
+    │   ├── styles             # CSS files
+    │   ├── App.jsx            # Component startup file
+    │   ├── main.jsx           # Application startup file
+    │   └── ...
+    └── ...
+
+#### Automated tests
+
+Automated tests are usually placed into the `test` or, less commonly, into the `spec` or `tests` folder.
+
+    .
+    ├── ...
+    ├── test                        # Test files
+    │   ├── App.test.jsx            # Load and stress tests
+    │   └── ...
+    └── ...
+
+#### Documentation files
+
+Often it is beneficial to include some reference data into the project, such as
+Rich Text Format (RTF) documentation, which is usually stored into the `docs`
+or, less commonly, into the `doc` folder.
+
+    .
+    ├── ...
+    ├── docs                                                    # Documentation files
+    │   ├── FE-Design-Chicks-Challenge-2022.pdf                 # Table of contents
+    │   └── ...
+    └── ...
+
 ## Installation and Run
 
 Install with npm
